@@ -2,19 +2,26 @@
 
 @theme {
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-onest: var(--font-onest);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --radius-base: var(--base-radius);
+  --color-foreground-muted: var(--foreground-muted)
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #02020A;
+  --foreground: #E1DEE3;
+  --foreground-muted: #545454;
+  --primary: #E84855;
+  --accent: #ECA400;
+  --base-radius: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
