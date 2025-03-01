@@ -13,7 +13,7 @@ export const useActiveSection = () => {
             if (visibleSection) {
                 setActiveSection(visibleSection.id);
             }
-        }, {threshold:[0.7]});
+        }, {threshold:[0.4]});
 
 
         //Get custom attribute data-section from all sections

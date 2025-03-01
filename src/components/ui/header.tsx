@@ -67,7 +67,7 @@ const MobileNav = () => {
 export const Header = () => {
     //! TODO: Change color when scrollY is over 30%
     return (
-        <header className={clsx('py-4 px-4 md:px-6 lg:px-32 flex items-center justify-between sticky top-0 left-0 right-0 bg-background')}>
+        <header className={clsx('py-4 px-4 md:px-6 lg:px-32 flex items-center justify-between sticky top-0 left-0 right-0 bg-background z-50')}>
             <Link href={"/"}><Image src={Logo} alt='Logo de Fernando Gorordo' width={100} /></Link>
             <DesktopNav/>
             <MobileNav />
