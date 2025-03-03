@@ -41,7 +41,7 @@ const ProjectCardChip = ({ name }: { name: string }) => {
     );
 }
 
-export const ProjectCard = ({ title, description, tags, thumbnail }: Project) => {
+export const ProjectCard = ({ title, description, tags }: Project) => {
 
     return (
         <article className='rounded-base group'>
