@@ -1,7 +1,8 @@
 import { div, span } from 'framer-motion/client';
 import { FC, JSX } from 'react';
-import { CSSIcon, DockerIcon, ExpressJSIcon, FirebaseIcon, FramerMotionIcon, GitIcon, HtmlIcon, JavaScriptIcon, JestIcon, JWTIcon, LinuxIcon, MaterialUIIcon, MongoDBIcon, MongooseIcon, MySQLIcon, NestJSIcon, NextJSIcon, NodeJSIcon, PostgreSQLIcon, PrismaIcon, ReactIcon, ReactRouterIcon, ReduxIcon, ShadcnUIIcon, SQLiteIcon, TailwindCSSIcon, TypeORMIcon, TypeScriptIcon, ZustandIcon } from './ui/tech-icons';
+import { CSSIcon, DockerIcon, ExpressJSIcon, FirebaseIcon, FramerMotionIcon, GitIcon, HtmlIcon, JavaScriptIcon, JestIcon, JWTIcon, LinuxIcon, MaterialUIIcon, MongoDBIcon, MongooseIcon, MySQLIcon, NestJSIcon, NextJSIcon, NodeJSIcon, PostgreSQLIcon, PrismaIcon, ReactIcon, ReactRouterIcon, ReduxIcon, ShadcnUIIcon, SQLiteIcon, TailwindCSSIcon, TypeORMIcon, TypeScriptIcon, ZustandIcon } from './ui/common/tech-icons';
 import { PlusIcon } from 'lucide-react';
+import { Container } from './ui';
 
 interface TechStack {
     techName: string;
@@ -11,7 +12,7 @@ interface TechStack {
 const techs: TechStack[] = [
     {
         techName: 'HTML',
-        icon: <HtmlIcon/>
+        icon: <HtmlIcon />
     },
     {
         techName: 'CSS',
@@ -127,11 +128,11 @@ const techs: TechStack[] = [
     },
     {
         techName: 'Y más...',
-        icon: <PlusIcon/>
+        icon: <PlusIcon />
     },
 ];
 
-const TechChip: FC<TechStack> = ({icon, techName}) => {
+const TechChip: FC<TechStack> = ({ icon, techName }) => {
     return (
         <span className='rounded-full px-4 py-2 border flex items-center gap-2'>{icon}{techName}</span>
     )
@@ -140,18 +141,20 @@ const TechChip: FC<TechStack> = ({icon, techName}) => {
 
 export const StackSection = () => {
     return (
-        <section data-section id="stack" className='mx-4 md:mx-8 lg:px-32 max-w-[1440px] lg:mx-auto py-12 md:py-20 flex flex-col gap-12 md:gap-20'>
-            <div className=''>
-                <h2 className='text-xl text-primary mb-4 text-center'>STACK TECNOLOGÍCO</h2>
-                <h3 className='text-xl md:text-3xl font-bold text-center'>algunas de las tecnologías que domino</h3>
-            </div>
+        <section data-section id="stack">
+            <Container className='py-12 md:py-20 flex flex-col gap-12 md:gap-20'>
+                <div className=''>
+                    <h2 className='text-xl text-primary mb-4 text-center'>STACK TECNOLOGÍCO</h2>
+                    <h3 className='text-xl md:text-3xl font-bold text-center'>algunas de las tecnologías que domino</h3>
+                </div>
 
-            <div className='flex flex-wrap items-center gap-6 justify-center'>
-                {techs.map(({techName, icon}) => <TechChip techName={techName} icon={icon} key={techName}/>)}
-            </div>
-            <div>
-                <p className='text-zinc-500 text-center font-medium'>unas de las claves para mejorar es nunca dejar de aprender, por eso, mi stack se amplia día a día con estudio y  dedicación constante.</p>
-            </div>
+                <div className='flex flex-wrap items-center gap-6 justify-center'>
+                    {techs.map(({ techName, icon }) => <TechChip techName={techName} icon={icon} key={techName} />)}
+                </div>
+                <div>
+                    <p className='text-foreground-muted text-center font-medium'>unas de las claves para mejorar es nunca dejar de aprender, por eso, mi stack se amplia día a día con estudio y  dedicación constante.</p>
+                </div>
+            </Container>
         </section>
     )
 }

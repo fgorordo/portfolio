@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins, Onest } from "next/font/google";
 import "./globals.css";
-import { Header } from '@/components/ui';
+import { Footer, FooterNavigation } from '@/components/ui/footer/';
+import { Header } from '../components/ui/header/';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
 const poppinsSans = Poppins({
@@ -32,6 +35,9 @@ export default function RootLayout({
       >
         <Header/>
         {children}
+        <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import { ArrowUpRightIcon } from 'lucide-react';
 
 import ProjectImage from '@/assets/images/project.jpg'
 import { useActiveSection } from '../hooks/useActiveSection';
+import { Container } from './ui';
 
 interface Project {
     thumbnail: string;
@@ -17,19 +18,19 @@ const projects: Project[] = [
     {
         thumbnail: '',
         title: 'PymePILOT',
-        tags: ["fullstack","design","ux/ui","saas"],
+        tags: ["fullstack", "design", "ux/ui", "saas"],
         description: 'Gestiona tu pyme o negocio con esta plataforma sencilla y funcional. Controla tu stock, gestiona tus clientes y recibe analíticas en tiempo real.',
     },
     {
         thumbnail: '',
         title: 'eMPRENDER.io',
-        tags: ["fullstack","design","ux/ui","saas"],
+        tags: ["fullstack", "design", "ux/ui", "saas"],
         description: '¿Tienes una idea y no tienes con quien comenzar a trabajar? En eMPRENDER conecta con profesionales/emprendores de todo el mundo para encontrar tu socio ideal.',
     },
     {
         thumbnail: '',
         title: 'Portfolio Personal',
-        tags: ["fullstack","design","ux/ui"],
+        tags: ["fullstack", "design", "ux/ui"],
         description: 'No importa que tan talentoso seas, si no te das a conocer al mundo nunca vas a ayudar a nadie. Mi portfolio es una parte de mí destinada a mostrarle al mundo mi trabajo.',
     },
 ]
@@ -88,8 +89,8 @@ export const ProjectCard = ({ title, description, tags, thumbnail }: Project) =>
 export const ProjectsSection = () => {
     return (
         <section data-section id='projects' className='relative'>
-            <div className='mx-4 md:mx-8 lg:px-32 max-w-[1440px] lg:mx-auto py-12 md:py-20 flex flex-col gap-12'>
-                <div className='bg-[url(../assets/images/projects-header-image.webp)] bg-center bg-cover absolute top-0 left-0 right-0 h-[40%] -z-50 after:content-[""] after:absolute after:top-0 after:left-0 after:-right-0 after:h-full after:bg-gradient-to-t after:from-background after:via-background/60 after:to-background'/>
+            <div className='bg-[url(../assets/images/projects-header-image.webp)] bg-center bg-cover absolute top-0 left-0 right-0 h-[40%] -z-50 after:content-[""] after:absolute after:top-0 after:left-0 after:-right-0 after:h-full after:bg-gradient-to-t after:from-background after:via-background/60 after:to-background' />
+            <Container className='py-12 md:py-20'>
                 <div className=''>
                     <h2 className='text-xl text-primary mb-4'>SERVICIOS</h2>
                     <div className='flex gap-6 flex-col md:flex-row'>
@@ -97,12 +98,12 @@ export const ProjectsSection = () => {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-12 md:mt-20'>
                     {
-                        projects.map(({description, tags, thumbnail, title}) => <ProjectCard key={title} title={title} description={description} tags={tags} thumbnail='' />)
+                        projects.map(({ description, tags, thumbnail, title }) => <ProjectCard key={title} title={title} description={description} tags={tags} thumbnail='' />)
                     }
                 </div>
-            </div>
+            </Container>
         </section>
     )
 }

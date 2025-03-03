@@ -1,6 +1,7 @@
-import { QuoteIcon, TextQuoteIcon } from 'lucide-react';
+import { FileTextIcon, QuoteIcon, TextQuoteIcon } from 'lucide-react';
 import Image from 'next/image';
 import { FC } from 'react';
+import { Button, Container } from './ui';
 
 interface Testimony {
     testimony: string;
@@ -36,7 +37,7 @@ const TestimonyCard: FC<Testimony> = ({ avatarUrl, companyAndPosition, fullName,
             {/* <QuoteIcon className='h-20 w-20 absolute right-2 text-accent -top-12'/> */}
             <p className='h-full mt-8'>{testimony}</p>
             <div className='flex items-center justify-between gap-4'>
-                <Image alt={`Avatar de ${fullName}`} src={'https://i.pravatar.cc/300'} width={300} height={300} className='w-12 h-12 rounded-full'/>
+                <Image alt={`Avatar de ${fullName}`} src={'https://i.pravatar.cc/300'} width={300} height={300} className='w-12 h-12 rounded-full' />
                 <div>
                     <h4 className='text-xl font-semibold'>{fullName}</h4>
                     <p className='text-primary'>{companyAndPosition}</p>
@@ -50,28 +51,34 @@ const TestimonyCard: FC<Testimony> = ({ avatarUrl, companyAndPosition, fullName,
 export const AboutMeSection = () => {
     return (
         <div data-section id='about-me'>
-            <section className='mx-4 md:mx-8 lg:px-32 max-w-[1440px] lg:mx-auto py-12 flex flex-col gap-12'>
-                <div className=''>
-                    <h2 className='text-xl text-primary mb-4'>SOBRE MÍ</h2>
-                    <h3 className='text-xl md:text-3xl font-bold'>fernando gorordo - full stack developer - web designer</h3>
-                    <p className='mt-6'>Desde muy temprano descubrí mi pasión por la tecnología. Me formé en áreas relacionadas con la informática y programación, y durante mi carrera académica tuve la oportunidad de experimentar con proyectos reales. Este camino, construido paso a paso, me llevó a decidir que el desarrollo de software era mi vocación.</p>
-                    <p className='mt-2'>Combino habilidades técnicas con una visión creativa para transformar ideas en proyectos digitales funcionales y atractivos. Disfruto el proceso de optimizar cada detalle, asegurando que cada solución aporte valor real a mis clientes, y me impulsa la constante búsqueda de mejora y excelencia en cada línea de código.</p>
-                </div>
-                <p>vale x 1 boton</p>
+            <section className=''>
+                <Container className='pt-12 md:pt-20 pb-6 md:pb-10'>
+                    <div className=''>
+                        <h2 className='text-xl text-primary mb-4'>SOBRE MÍ</h2>
+                        <h3 className='text-xl md:text-3xl font-bold'>fernando gorordo - full stack developer - web designer</h3>
+                        <p className='mt-6'>Desde muy temprano descubrí mi pasión por la tecnología. Me formé en áreas relacionadas con la informática y programación, y durante mi carrera académica tuve la oportunidad de experimentar con proyectos reales. Este camino, construido paso a paso, me llevó a decidir que el desarrollo de software era mi vocación.</p>
+                        <p className='mt-2'>Combino habilidades técnicas con una visión creativa para transformar ideas en proyectos digitales funcionales y atractivos. Disfruto el proceso de optimizar cada detalle, asegurando que cada solución aporte valor real a mis clientes, y me impulsa la constante búsqueda de mejora y excelencia en cada línea de código.</p>
+                    </div>
+                    <div className='flex justify-end mt-12'>
+                        <Button type='link' color='accent' href='#'>Curriculum Vitae<FileTextIcon /></Button>
+                    </div>
+                </Container>
             </section>
-            <section className='mx-4 md:mx-8 lg:px-32 max-w-[1440px] lg:mx-auto py-12 md:py-20 flex flex-col gap-12'>
-                <div className=''>
-                    <h2 className='text-xl text-primary mb-4'>TESTIMONIOS</h2>
-                    <h3 className='text-xl md:text-3xl font-bold'>¿que dice la gente sobre mí?</h3>
-                </div>
+            <section>
+                <Container className='pb-12 md:pb-20 pt-6 md:pt-10'>
+                    <div className=''>
+                        <h2 className='text-xl text-primary mb-4'>TESTIMONIOS</h2>
+                        <h3 className='text-xl md:text-3xl font-bold'>¿que dice la gente sobre mí?</h3>
+                    </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6' >
-                    {
-                        testimonies.map((t) => <TestimonyCard key={t.fullName} avatarUrl='' companyAndPosition={t.companyAndPosition} fullName={t.fullName} testimony={t.testimony} />)
-                    }
-                </div>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-6' >
+                        {
+                            testimonies.map((t) => <TestimonyCard key={t.fullName} avatarUrl='' companyAndPosition={t.companyAndPosition} fullName={t.fullName} testimony={t.testimony} />)
+                        }
+                    </div>
+                </Container>
             </section>
 
-        </div>
+        </div >
     )
 }
