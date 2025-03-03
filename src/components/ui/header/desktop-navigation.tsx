@@ -5,12 +5,13 @@ import clsx from 'clsx';
 
 import { useActiveSection } from '@/hooks';
 import { NavigationLink } from '../interfaces';
+import { ChevronLeft } from 'lucide-react';
 
 const DesktopNavItem = ({ text, url }: NavigationLink) => {
   const activeSection = useActiveSection();
 
   return (
-    <Link href={url} className={clsx('p-2 transition-all duration-300', activeSection === url.split('#')[1] ? "text-primary" : 'hover:text-foreground-muted')}>{text} <span className={clsx('text-accent', activeSection === url.split('#')[1] ? 'inline-block' : 'hidden')}>//</span></Link>
+    <Link href={url} className={clsx('p-2 transition-all duration-300 flex items-center gap-2', activeSection === url.split('#')[1] ? "text-primary" : 'hover:text-foreground-muted')}>{text} <span className={clsx('text-accent', activeSection === url.split('#')[1] ? 'inline-block' : 'hidden')}><ChevronLeft /></span></Link>
   );
 }
 

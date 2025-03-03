@@ -31,7 +31,7 @@ const testimonies: Testimony[] = [
     }
 ];
 
-const TestimonyCard: FC<Testimony> = ({ avatarUrl, companyAndPosition, fullName, testimony }) => {
+const TestimonyCard: FC<Testimony> = ({ companyAndPosition, fullName, testimony }) => {
     return (
         <article className='p-4 rounded-base flex flex-col gap-4 relative'>
             {/* <QuoteIcon className='h-20 w-20 absolute right-2 text-accent -top-12'/> */}
