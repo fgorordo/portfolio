@@ -1,4 +1,4 @@
-import { FC, HTMLProps, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 
 interface ContainerProps extends PropsWithChildren {
   className?: string;

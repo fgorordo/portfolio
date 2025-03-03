@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Onest } from "next/font/google";
 import "./globals.css";
-import { Footer, FooterNavigation } from '@/components/ui/footer/';
+import { Footer } from '@/components/ui/footer/';
 import { Header } from '../components/ui/header/';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';

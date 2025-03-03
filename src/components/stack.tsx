@@ -1,4 +1,3 @@
-import { div, span } from 'framer-motion/client';
 import { FC, JSX } from 'react';
 import { CSSIcon, DockerIcon, ExpressJSIcon, FirebaseIcon, FramerMotionIcon, GitIcon, HtmlIcon, JavaScriptIcon, JestIcon, JWTIcon, LinuxIcon, MaterialUIIcon, MongoDBIcon, MongooseIcon, MySQLIcon, NestJSIcon, NextJSIcon, NodeJSIcon, PostgreSQLIcon, PrismaIcon, ReactIcon, ReactRouterIcon, ReduxIcon, ShadcnUIIcon, SQLiteIcon, TailwindCSSIcon, TypeORMIcon, TypeScriptIcon, ZustandIcon } from './ui/common/tech-icons';
 import { PlusIcon } from 'lucide-react';

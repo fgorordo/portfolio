@@ -1,5 +1,4 @@
-import { article } from 'framer-motion/client';
-import { ChevronDownIcon, ChevronRightIcon } from 'lucide-react';
+import { ChevronDownIcon } from 'lucide-react';
 import { FC } from 'react';
 import { Container } from './ui';
 

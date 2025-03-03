@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { ArrowUpRightIcon } from 'lucide-react';
 
 import ProjectImage from '@/assets/images/project.jpg'
-import { useActiveSection } from '../hooks/useActiveSection';
 import { Container } from './ui';
 
 interface Project {

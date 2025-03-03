@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { CSSProperties, HTMLProps, JSX, PropsWithChildren } from 'react';
+import { JSX, PropsWithChildren } from 'react';
 
 interface ButtonProps extends PropsWithChildren {
     link?: boolean;
     href?: string;
-    onClick?: (args: any) => any;
+    onClick?: () => void;
     leftIcon?: JSX.Element;
     rightIcon?: JSX.Element;
     type: "link" | "filled" | "outline";

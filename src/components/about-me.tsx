@@ -1,4 +1,4 @@
-import { FileTextIcon, QuoteIcon, TextQuoteIcon } from 'lucide-react';
+import { FileTextIcon } from 'lucide-react';
 import Image from 'next/image';
 import { FC } from 'react';
 import { Button, Container } from './ui';
