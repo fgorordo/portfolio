@@ -41,7 +41,7 @@ export const Header = () => {
 
     return (
         <header className='sticky top-0 z-50 bg-background'>
-            <Container className='py-6 flex justify-between items-center'>
+            <Container className='py-4 md:py-6 flex justify-between items-center'>
                 <FLogo />
                 <MobileNavigation isOpen={isOpen} handleOpen={handleOpen}/>
                 <DesktopNavigation navigationItems={headerNavigation}/>

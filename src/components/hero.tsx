@@ -1,33 +1,57 @@
 "use client";
 
-import { GithubIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
-import { Button, Container } from './ui/common';
+import Link from 'next/link';
+import { Container } from './ui/common';
+import { ArrowRightIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const HeroSection = () => {
+
     return (
         <section className='relative' id='home' data-section>
-            <div className='bg-[url(../assets/images/hero-background-image.webp)] bg-cover bg-no-repeat absolute top-0 right-0 bottom-0 left-0 -z-10 before:contents-[""] before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:bg-gradient-to-t before:from-background before:via-transparent before:to-background before:w-full before:h-full'/>
-            <Container className='py-12 md:py-20 flex flex-col gap-12'>
+            <Container className='py-12 md:py-16 flex flex-col gap-12 items-center'>
+                <div className='text-sm md:text-base px-4 py-2 border-2 border-foreground-muted rounded-full max-w-max'><strong>Abierto a oportunidades:</strong> freelance & fulltime</div>
                 <div>
-                    <h4 className='text-4xl md:text-6xl lg:text-7xl font-bold font-onest text-primary mb-12 text-center'>tus proyectos digitales merecen más que soluciones prefabricadas.</h4>
-                    <h3 className='text-2xl md:text-3xl lg:text-4xl text-center'>soy <span className='font-bold'>fernando gorordo;</span></h3>
-                    <h2 className='text-center mt-6 text-2xl md:text-3xl lg:text-4xl font-bold'>Diseñador Web y Desarrollador Full Stack.</h2>
+                    <motion.h1
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                        className='text-xl mb-4'>
+                        Hola, soy<span className='text-accent'> fernando gorordo</span>
+                    </motion.h1>
+                    <motion.h2
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                        className='text-5xl mb-6'>
+                        <strong>Full Stack Developer</strong><span className='text-primary'> & Web Designer.</span>
+                    </motion.h2>
+                    <motion.h3
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1 }}
+                    >
+                        Desarrollador full-stack con una curiosidad insaciable. Desde Buenos Aires, Argentina busco acercar mis experiencias y conocimientos a traves de mi blog a todo aquel que quiera prestarme unos minutos de su tiempo.
+                    </motion.h3>
                 </div>
+                <div className='flex gap-6 flex-col md:flex-row items-center'>
 
-                <div className='flex items-center justify-center'>
-                    <Button color='primary' type='outline'>Agenda tu reunion <span className='font-bold'>gratuita</span> ahora</Button>
+                    <motion.div
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ duration: 0.1 }}
+                    >
+
+                        <Link href={'#'} className='border-2 px-4 py-3 rounded-full transition-all duration-300'>Agendar llamada <strong>gratuita</strong></Link>
+                    </motion.div>
+
+                    <motion.div
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ duration: 0.1 }}
+                    >
+
+                        <Link href={'#projects'} className='flex gap-2 items-center text-lg font-medium hover:text-accent transition-colors duration-300 group'>Explora mi trabajo<ArrowRightIcon className='group-hover:translate-x-1 transition-transform duration-300 ' /></Link>
+                    </motion.div>
                 </div>
-
-                <div className='ml-auto'>
-                    <span className='mb-4 block text-foreground-muted'>Encuentrame en:</span>
-                    <div className='flex gap-6 text-foreground'>
-                        <InstagramIcon />
-                        <TwitterIcon />
-                        <GithubIcon />
-                        <LinkedinIcon />
-                    </div>
-                </div>
-
             </Container>
         </section>
     )
